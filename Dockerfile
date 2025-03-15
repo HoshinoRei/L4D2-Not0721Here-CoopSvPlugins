@@ -6,7 +6,7 @@ RUN apt update && \
 USER steam
 WORKDIR /home/steam/temp
 COPY --chown=steam . ./
-RUN rsync -r ./ /home/steam/l4d2server && \
+RUN rsync -r ./ /home/steam/l4d2server/left4dead2 && \
     rm -rf "/home/steam/temp"
 WORKDIR /home/steam
 CMD ["-secure", "+exec server.cfg", "+map c1m1_hotel", "-port 27015", "-tickrate 100"]
